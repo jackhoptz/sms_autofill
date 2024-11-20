@@ -123,14 +123,7 @@ class _PinFieldAutoFillState extends State<PinFieldAutoFill> with CodeAutoFill {
       cursor: widget.cursor,
       autofillHints: const <String>[AutofillHints.oneTimeCode],
       textCapitalization: TextCapitalization.none,
-      contextMenuBuilder: (context, editableTextState) {
-        final List<ContextMenuButtonItem> buttonItems =
-            editableTextState.contextMenuButtonItems;
-        return AdaptiveTextSelectionToolbar.buttonItems(
-          anchors: editableTextState.contextMenuAnchors,
-          buttonItems: buttonItems,
-        );
-      },
+      toolbarOptions: ToolbarOptions(paste: true),
       keyboardType: widget.keyboardType,
       autoFocus: widget.autoFocus,
       controller: controller,
